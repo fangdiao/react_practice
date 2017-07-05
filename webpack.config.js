@@ -7,7 +7,7 @@ const autoprefixer = require("autoprefixer");
 module.exports = {
   context:path.resolve(__dirname,"src"),
   entry: {
-    resume: "./js/index.js",         //首页入口
+    index: "./js/index.js",         //首页入口
   },
   output: {
     path: path.resolve(__dirname,"dist"),              //输出的打包文件相对于这个路径
@@ -19,9 +19,9 @@ module.exports = {
     contentBase: path.join(__dirname, "asstes"),
     inline:true,
     compress: true,
-    port:8080,
+    port:3000,
     hot:true,
-    publicPath:"/dist", 
+    publicPath:"/dist",
   },
   module: {
     rules: [
@@ -76,7 +76,7 @@ module.exports = {
     //index页面的配置
     new HtmlWebpackPlugin({
       filename: "index.html",          //index页面打包后的文件名
-      template: "./common.html",   //index页面的模板文件
+      template: "./index.html",   //index页面的模板文件
       inject: "body",                  //js文件放在body
       chunks: ["index"],      //需要加入的js文件
       title: "index",
